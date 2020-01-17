@@ -1,64 +1,80 @@
 package SudokuSolver;
 
-import java.util.Scanner;
+import toolbox.emun.Style;
+import toolbox.exception.FileException;
+import toolbox.file.CSVUtility;
+import toolbox.output.Writer;
 
 class IO {
 
-    private static String lineSeperator = "+-----------+-----------+-----------+";
-
+    private static CSVUtility csvUtility = new CSVUtility(';');
+    private static Writer writer = new Writer();
 
     /**
-     * lets user inout a sudoku row by row
+     * this method opens a csv file as sudoku
+     * <p>
+     * the csv file must have 9 rows and 9 columns
+     * </p> <p>
+     * every empty box must be marked by a single dot (".")
+     * </p>
      *
      * @return Sudoku
      */
     public static Sudoku inputSudoku() {
-        Scanner sc = new Scanner(System.in);
-        int[][] sudoku = new int[9][9];
-        for (int i = 0; i < 9; i++) {
-            //input each row
-            System.out.print("enter row " + (i + 1) + " ('.' for empty, split by ','): ");
-            String line = sc.next().trim();
-            String[] lineSplited = line.split(",");
-
-            // parse each row
-            for (int j = 0; j < lineSplited.length; j++) {
-                sudoku[i][j] = Integer.parseInt(lineSplited[j].trim());
+        try {
+            String[][] sudokuString = csvUtility.openFile();
+            int sudokuInt[][] = new int[sudokuString.length][sudokuString.length];
+            for (int i = 0; i < sudokuString.length; i++) {
+                for (int j = 0; j < sudokuString.length; j++) {
+                    if (sudokuString[i][j].equals(".")) {
+                        sudokuString[i][j] = "0";
+                    }
+                    sudokuInt[i][j] = Integer.parseInt(sudokuString[i][j]);
+                }
             }
+            return new Sudoku(sudokuInt);
+        } catch (FileException e) {
+            writer.println("file could not be opened", Style.Error1);
         }
-
-        return new Sudoku(sudoku);
+        return null;
     }
 
     /**
      * @param sudoku will be printed
      */
-    public static void printSudoku(Sudoku sudoku) {
-        System.out.println(lineSeperator);
+    public static void printSudoku(Sudoku sudoku, boolean curser) {
+        String lineSeperator = "----------+-----------+----------";
+        String space = "    ";
         // print each row
         for (int i = 0; i < 9; i++) {
 
             int[] row = sudoku.getRow(i);
 
             //print row
-            System.out.print("| ");
+            writer.print(space);
             for (int j = 0; j < 9; j++) {
-                if (row[j] == 0)
-                    System.out.print(" . ");
-                else
-                    System.out.print(" " + row[j] + " ");
+                if (curser && i == GUI.getCurserRow() && j == GUI.getCurserColumn()) {
+                    if (row[j] == 0) {
+                        writer.print("[.]");
+                    } else {
+                        writer.print("[" + Integer.toString(row[j]) + "]");
+                    }
+                } else {
+                    if (row[j] == 0)
+                        writer.print(" . ");
+                    else
+                        writer.print(" " + row[j] + " ");
+                }
                 if (j == 2 || j == 5) {
-                    System.out.print(" | ");
+                    writer.print(" | ");
                 }
             }
-            System.out.print(" |");
 
             // paragraph
             System.out.println();
             // styling
             if (i == 2 || i == 5)
-                System.out.println(lineSeperator);
+                System.out.println(space + lineSeperator);
         }
-        System.out.println(lineSeperator);
     }
 }

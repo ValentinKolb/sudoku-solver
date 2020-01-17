@@ -10,6 +10,10 @@ public class Main {
 
         IO.printSudoku(testSudoku);
 
+        SudokuSolver sudokuSolver = new SudokuSolver(testSudoku);
+
+        IO.printSudoku(testSudoku);
+
         System.out.println();
 
     }

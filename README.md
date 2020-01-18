@@ -1,1 +1,2 @@
-external libraries: https://github.com/ValentinKolb/toolbox (toolbox.jar)
+# small sudoku game in command line 
+

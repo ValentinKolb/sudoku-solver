@@ -1,11 +1,11 @@
 package SudokuSolver;
 
+import toolbox.emun.Colour;
 import toolbox.output.Writer;
 
 class SudokuSolver {
 
-    private Sudoku solvedSudoku;
-    private Sudoku originalSudoku;
+    private Sudoku sudoku;
     private int row;
     private int column;
 
@@ -15,26 +15,16 @@ class SudokuSolver {
      * solves the submitted sudoku
      */
     public Sudoku solve(Sudoku sudoku) {
-        solvedSudoku = sudoku; // call by reference
+        Sudoku clone = new Sudoku(sudoku); // call by value
+        this.sudoku = sudoku; // call by reference
         //reset row and column value, this determines were we start to solve the sudoku
-        row = 0;
-        column = 0;
-
-        // copy of sudoku to originalSudoku
-        int[][] originalSudokuArray = new int[9][9];
-        for (int i = 0; i < 9; i++) { // go through each
-            for (int j = 0; j < 9; j++) { // go through each column
-                originalSudokuArray[i][j] = sudoku.getElement(i, j); // copy every element
-            }
-        }
-        originalSudoku = new Sudoku(originalSudokuArray); // call by value
-
+        resetPosition();
         // solve
         if (!solveSudoku()) { // not solvable
-            writer.print("sudoku can't be solved");
-            solvedSudoku = originalSudoku;
+            writer.println("sudoku can't be solved", Colour.red);
+            this.sudoku = clone;
         }
-        return solvedSudoku;
+        return this.sudoku;
     }
 
     /**
@@ -45,7 +35,7 @@ class SudokuSolver {
     private boolean solveSudoku() {
         if (row == 9) { // if the recursive algorithm went trough the whole sudoku it is solved
             return true;
-        } else if (originalSudoku.getElement(row, column) != 0) { // the element looked at is specified by the original sudoku and cant be changed // TODO: solvedSudoku.canBeChanged();
+        } else if (!sudoku.canBeChanged(row, column)) { // the element looked at is specified by the original sudoku and cant be changed
             nextPosition(); // skip this element and got to the next
             if (solveSudoku()) { // if the next method finds a solution, go to the last position and return true
                 lastPosition(); // obsolete?
@@ -57,7 +47,7 @@ class SudokuSolver {
         } else { // blank space in the sudoku
             for (int i = 9; i > 0; i--) { // go through every possible solution (from 9 to 1)
                 if (verifyElement(i)) { // test if (i) only appears once in its row, column and 3X3 square
-                    solvedSudoku.setElement(row, column, i); // if so, set it to be the correct solution
+                    sudoku.setElement(row, column, i); // if so, set it to be the correct solution
                     nextPosition(); // go to the next position
                     if (solveSudoku()) { // the next method only can finds a solution, is the solution of this method is correct
                         lastPosition(); // obsolete?
@@ -66,11 +56,19 @@ class SudokuSolver {
                 }
             }
             // a this point is no additional possible solution, so a previous method made a mistake
-            solvedSudoku.setElement(row, column, 0); // reset the result (because it is wrong) of this method
+            sudoku.setElement(row, column, 0); // reset the result (because it is wrong) of this method
             lastPosition(); // go to the last position
             return false;  // tell the last method its result is wrong
         }
 
+    }
+
+    /**
+     * this method resets the position to the start position
+     */
+    private void resetPosition() {
+        row = 0;
+        column = 0;
     }
 
     /**
@@ -99,7 +97,7 @@ class SudokuSolver {
      */
     private boolean verifyElement(int element) {
         // unique to the row && unique to the column && unique to the square
-        return elementOfArray(element, solvedSudoku.getRow(row)) && elementOfArray(element, solvedSudoku.getColumn(column)) && elementOfArray(element, solvedSudoku.getSquare(row, column));
+        return elementOfArray(element, sudoku.getRow(row)) && elementOfArray(element, sudoku.getColumn(column)) && elementOfArray(element, sudoku.getSquare(row, column));
     }
 
     /**
@@ -118,20 +116,18 @@ class SudokuSolver {
      * @return true, if and only if the sudoku is filled correct
      */
     protected boolean checkSudoku(Sudoku sudoku) {
-        solvedSudoku = sudoku;
-        row = 0;
-        column = 0;
+        Sudoku solvedByUser = new Sudoku(sudoku); // call by value
+        this.sudoku = solve(sudoku.getOriginalSudoku()); // call by reference
+        //now compare the solved sudoku to the sudoku solved by the user
+        resetPosition();
         while (row != 9) {
-            if (!verifyElement(solvedSudoku.getElement(row, column))) { // || (solvedSudoku.getElement(row, column) == 0)
-                GUI.seperator();
-                writer.println("error at row " + (row+1) + " and column " + (column+1));
-                return false; // if the element is not unique to its rwo, columns or square OR if the element is 0 the sudoku is wrongly solved
-            } else {
+            if (solvedByUser.getElement(row, column) != this.sudoku.getElement(row, column)) {
+                this.sudoku = solvedByUser;
+                return false;
             }
-            nextPosition(); // check every element
+            nextPosition();
         }
-        return true; // the sudoku is correctly solved
+        // at this point, every element of the sudoku was checked without an error, so it is correct
+        return true;
     }
-
-
 }

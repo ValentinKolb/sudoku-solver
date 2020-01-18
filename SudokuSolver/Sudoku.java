@@ -1,47 +1,69 @@
 package SudokuSolver;
 
-class Sudoku {
+class Sudoku{
 
     private int sudoku[][];
     private int[][] originalSudoku;
 
     protected Sudoku(int[][] sudoku) {
-        //TODO proper check
         this.sudoku = sudoku;
 
         // copy of sudoku to originalSudoku
         originalSudoku = new int[sudoku.length][sudoku.length];
+        int temp;
         for (int i = 0; i < sudoku.length; i++) { // go through each
             for (int j = 0; j < sudoku.length; j++) { // go through each column
-                originalSudoku[i][j] = sudoku[i][j]; // copy every element
+                temp = sudoku[i][j]; // copy every element
+                originalSudoku[i][j] = temp; // paste it
+            }
+        }
+    }
+
+    public Sudoku(Sudoku copy) {
+        int temp;
+        // copy to sudoku
+        this.sudoku = new int[9][9];
+        for (int i = 0; i < 9; i++) { // go through each
+            for (int j = 0; j < 9; j++) { // go through each column
+                temp = copy.getElement(i, j); // copy every element
+                this.sudoku[i][j] = temp; // paste it
+            }
+        }
+
+        // copy of sudoku to originalSudoku
+        originalSudoku = new int[9][9];
+        for (int i = 0; i < 9; i++) { // go through each
+            for (int j = 0; j < 9; j++) { // go through each column
+                temp = sudoku[i][j]; // copy every element
+                originalSudoku[i][j] = temp; // paste it
             }
         }
     }
 
     /**
-     * @param row the row, in which the element is located
+     * @param row    the row, in which the element is located
      * @param column the column, in which the element is located
      * @return the specified element
      */
-    protected int getElement(int row, int column){
+    protected int getElement(int row, int column) {
         return sudoku[row][column];
     }
 
     /**
-     * @param row the row, in which the element is located
-     * @param column the column, in which the element is located
+     * @param row     the row, in which the element is located
+     * @param column  the column, in which the element is located
      * @param element the new value of the element
      */
-    protected void setElement(int row, int column, int element){
+    protected void setElement(int row, int column, int element) {
         sudoku[row][column] = element;
     }
 
     /**
-     * @param row the row, in which the element is located
+     * @param row    the row, in which the element is located
      * @param column the column, in which the element is located
      * @return true, if and only if the element is not one of the numbers given by the original sudoku
      */
-    protected boolean canBeChanged (int row, int column){
+    protected boolean canBeChanged(int row, int column) {
         return originalSudoku[row][column] == 0;
     }
 
@@ -66,7 +88,7 @@ class Sudoku {
     }
 
     /**
-     * @param row the row, in which the element is located
+     * @param row    the row, in which the element is located
      * @param column the column, in which the element is located
      * @return the 3X3 square of the sudoku in which the specified element is located
      */
@@ -93,14 +115,14 @@ class Sudoku {
     /**
      * @return the sudoku as int array
      */
-    protected int [][] getSudoku() {
+    protected int[][] getSudoku() {
         return sudoku;
     }
 
     /**
      * @return the unmodified sudoku
      */
-    protected Sudoku getOriginalSudoku(){
-        return new Sudoku(originalSudoku);
+    protected Sudoku getOriginalSudoku() {
+        return new Sudoku(new Sudoku(originalSudoku));
     }
 }

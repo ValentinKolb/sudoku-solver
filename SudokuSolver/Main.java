@@ -1,5 +1,6 @@
 package SudokuSolver;
 
+import toolbox.emun.Colour;
 import toolbox.emun.Style;
 import toolbox.exception.FileException;
 import toolbox.exception.ParsingException;
@@ -36,7 +37,6 @@ public class Main {
             GUI.seperator();
 
             selection(protectedReader.nextChar("command: "));
-
         }
 
     }
@@ -100,7 +100,7 @@ public class Main {
                     GUI.seperator();
                     writer.println("congratulations, everything is correct", Style.Validation1);
                 } else {
-                    writer.println("the sudoku is not correct");
+                    writer.println("the sudoku is not correct", Colour.red);
                 }
                 GUI.seperator();
                 GUI.commandsRed(); // prints menu actions

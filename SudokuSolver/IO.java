@@ -45,6 +45,7 @@ class IO {
     public static void printSudoku(Sudoku sudoku, boolean curser) {
         String lineSeperator = "----------+-----------+----------";
         String space = "    ";
+        writer.ln();
         // print each row
         for (int i = 0; i < 9; i++) {
 
@@ -76,5 +77,6 @@ class IO {
             if (i == 2 || i == 5)
                 System.out.println(space + lineSeperator);
         }
+        writer.ln();
     }
 }

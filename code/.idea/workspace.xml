@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e56772b4-a2ab-4994-87d5-3e0fd7bbdc2b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/$CACHE_FILE$" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/artifacts/sudoku_solver_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/dictionaries/valentinkolb.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/toolbox.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SudokuSolver/GUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SudokuSolver/IO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SudokuSolver/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SudokuSolver/SolveException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SudokuSolver/Solved.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SudokuSolver/StoredSudoku.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SudokuSolver/Sudoku.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SudokuSolver/SudokuSolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/.idea/$CACHE_FILE$" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/.idea/artifacts/sudoku_solver_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/.idea/dictionaries/valentinkolb.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/.idea/libraries/toolbox.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/META-INF/sudoku-solver.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/SudokuSolver/GUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/SudokuSolver/IO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/SudokuSolver/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/SudokuSolver/SolveException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/SudokuSolver/Solved.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/SudokuSolver/StoredSudoku.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/SudokuSolver/Sudoku.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/SudokuSolver/SudokuSolver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/sudoku-solver.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/sudoku-solver.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/sudokus/easySudoku0001.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/sudokus/easySudoku0002.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/sudokus/easySudoku0003.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/sudokus/hardSudoku0001.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/sudokus/hardSudoku0002.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/sudokus/hardSudoku0003.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/sudokus/mediumSudoku0001.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/sudokus/mediumSudoku0002.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../out/production/sudoku-solver/sudokus/mediumSudoku0003.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sudoku-solver.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sudoku-solver.jar" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1YBIcxNDKr3xuFB9M5BBiT1iNQV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="SudokuSolver.Main" />
+      <module name="code" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e56772b4-a2ab-4994-87d5-3e0fd7bbdc2b" name="Default Changelist" comment="" />
+      <created>1582409643298</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582409643298</updated>
+      <workItem from="1582409646657" duration="1438000" />
+      <workItem from="1582411093437" duration="306000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="955" y="471" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1582411392727">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="955" y="471" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.2560.1440@0.0.2560.1440" timestamp="1582411392727" />
+    <state width="2508" height="875" key="GridCell.Tab.0.bottom" timestamp="1582411378346">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2508" height="875" key="GridCell.Tab.0.bottom/0.0.2560.1440@0.0.2560.1440" timestamp="1582411378346" />
+    <state width="2508" height="875" key="GridCell.Tab.0.center" timestamp="1582411378345">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2508" height="875" key="GridCell.Tab.0.center/0.0.2560.1440@0.0.2560.1440" timestamp="1582411378345" />
+    <state width="2508" height="875" key="GridCell.Tab.0.left" timestamp="1582411378345">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2508" height="875" key="GridCell.Tab.0.left/0.0.2560.1440@0.0.2560.1440" timestamp="1582411378345" />
+    <state width="2508" height="875" key="GridCell.Tab.0.right" timestamp="1582411378346">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2508" height="875" key="GridCell.Tab.0.right/0.0.2560.1440@0.0.2560.1440" timestamp="1582411378346" />
+    <state x="640" y="199" key="SettingsEditor" timestamp="1582411399613">
+      <screen x="0" y="0" width="2560" height="1440" />
+    </state>
+    <state x="640" y="199" key="SettingsEditor/0.0.2560.1440@0.0.2560.1440" timestamp="1582411399613" />
+  </component>
+</project>

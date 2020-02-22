@@ -2,11 +2,6 @@ package SudokuSolver;
 
 import toolbox.emun.Colour;
 import toolbox.emun.Style;
-import toolbox.exception.FileException;
-import toolbox.exception.ParsingException;
-import toolbox.file.CSVUtility;
-import toolbox.input.ProtectedReader;
-import toolbox.output.Writer;
 import toolbox.userinteraction.Interviewer;
 
 public class Main {
@@ -15,8 +10,6 @@ public class Main {
     private static boolean resume = true;
     private static boolean showCurser = true;
 
-    private static Writer writer = new Writer();
-    private static ProtectedReader protectedReader = new ProtectedReader();
     private static Interviewer interviewer = new Interviewer();
     private static Sudoku sudoku = new Sudoku(intArrayForTextSudoku1);
     private static SudokuSolver sudokuSolver = new SudokuSolver();
@@ -36,7 +29,7 @@ public class Main {
             GUI.commands(); // prints all possible actions
             GUI.seperator();
 
-            selection(protectedReader.nextChar("command: "));
+            selection(Terminal.in.nextChar("command: "));
         }
 
     }

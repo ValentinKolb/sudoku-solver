@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="toolbox">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../toolbox/toolbox.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
